@@ -1,22 +1,23 @@
 == README
 
-# Week 1 : to do list
+# Week 1 : to do list  
 
-## User stories
+## User stories  
 
-A event should contain:
-1. title of event
-2. content of event
-3. status of completion
-4. order of precedence
+A event should contain:  
+1. title of event  
+2. content of event  
+3. status of completion  
+4. order of precedence  
 
-should be able to see lists of events, displaying title and truncated content
-should be able to add a new event
-should be able to delete a event
-should be able to edit a event title and content
-should be able to mark event as complete
-should be able to change order of precedence
-
+should be able to see lists of events, displaying title and truncated content  
+should be able to add a new event  
+should be able to delete a event  
+should be able to edit a event title and content  
+should be able to mark event as complete  
+should be able to change order of precedence  
+  
+----  Template of README below ----  
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

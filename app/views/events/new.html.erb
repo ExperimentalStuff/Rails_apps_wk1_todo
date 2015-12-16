@@ -1,0 +1,15 @@
+<h2> 新代辦事項 </h2>
+
+	<%= form_for @event do |f| %>
+		<div class="group">
+			<%= f.label("標題") %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="group">
+			<%= f.label("內容") %>
+			<%= f.text_area :content %>
+		</div>
+
+		<%= f.submit "submit", data: {disable_with: "submitting..."} %>
+	<% end %>

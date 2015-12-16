@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :title
       t.text :content
       t.boolean :status
-      t.integer :order
+      t.integer :event_order
 
       t.timestamps null: false
     end

@@ -2,7 +2,7 @@
 
 <%= link_to "New event", new_event_path %>
 
-<table>
+<table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>order</th>
@@ -10,7 +10,7 @@
 			<th>content</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="sortable">
 		<% @events.each do |event| %>
 			<tr>
 				<td><%= event.event_order %></td>

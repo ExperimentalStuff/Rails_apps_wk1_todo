@@ -12,7 +12,7 @@
 	</thead>
 	<tbody id="sortable">
 		<% @events.each do |event| %>
-			<tr>
+			<tr class="event" data-id="<%=event.id%>">
 				<td><%= event.event_order %></td>
 				<td><%= link_to event.title, event %></td>
 				<td><%= truncate(event.content) %></td>
@@ -20,3 +20,6 @@
 		<% end %>
 	</tbody>
 </table>
+
+<button class="btn btn-sm btn-info btn-primary" id="getOrder"> get orders </button>
+<span></span>

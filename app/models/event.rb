@@ -7,4 +7,10 @@ class Event < ActiveRecord::Base
 			save
 		end
 	end
+
+	def self.update_location(locations)
+		locations.each do |location|
+			self.update(location[:id], :event_order => location[:pos])
+		end
+	end
 end

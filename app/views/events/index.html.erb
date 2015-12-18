@@ -6,6 +6,7 @@
 	<thead>
 		<tr>
 			<th>order</th>
+			<th>id</th>
 			<th>title</th>
 			<th>content</th>
 		</tr>
@@ -14,6 +15,7 @@
 		<% @events.each do |event| %>
 			<tr class="event" data-id="<%=event.id%>">
 				<td><%= event.event_order %></td>
+				<td><%= event.id %></td>
 				<td><%= link_to event.title, event %></td>
 				<td><%= truncate(event.content) %></td>
 			</tr>
@@ -21,5 +23,5 @@
 	</tbody>
 </table>
 
-<button class="btn btn-sm btn-info btn-primary" id="getOrder"> get orders </button>
+<button class="btn btn-sm btn-info btn-primary" id="getOrder"> save current orders </button>
 <span></span>

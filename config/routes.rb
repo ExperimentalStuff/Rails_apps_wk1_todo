@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
 
   root 'events#index'
-  resources :events
+  resources :events do
+    collection do
+      post :location
+    end
+  end
+
+  # post 'events/location' => 'events#location'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

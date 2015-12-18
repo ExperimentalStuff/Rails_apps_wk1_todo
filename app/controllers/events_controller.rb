@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 	def index
-		@events = Event.all.order("id desc")
+		@events = Event.all.order("event_order")
 	end
 
 	def show
@@ -16,10 +16,11 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 
 		if @event.save
-			redirect_to events_path
+			redirect_to @event
 		else
 			render :new
 		end
+
 	end
 
 	def edit
@@ -38,10 +39,22 @@ class EventsController < ApplicationController
 	end
 
 	def destroy
-		@product = Product.find(params[:id])
+		@event = Event.find(params[:id])
 
-		@product.destroy
+		@event.destroy
 		redirect_to events_path
+	end
+
+	def location
+		respond_to do |format|
+			format.json {render :json => {:message => "success"}}
+			format.js {render :nothing => true}
+		end
+		if params["locations"]
+			@locations = params["locations"].map {|hash| hash.inject({}) {|item,(k,v)| item[k.to_sym]=v;item}}
+			puts @locations
+			Event.update_location(@locations)
+		end
 	end
 
 	private

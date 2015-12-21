@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  post '/positions/location', :controller => 'positions', :action => 'location'
 
+  
+  resources :events
   root 'events#index'
-  resources :events do
-    collection do
-      post :location
-    end
-  end
+
+
 
   # post 'events/location' => 'events#location'
 

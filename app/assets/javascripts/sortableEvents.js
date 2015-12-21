@@ -23,7 +23,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type: "POST",
-			url: "events/location",
+			url: "positions/location",
 			contentType: "application/json",
 			data: JSON.stringify(idpos)
 		});

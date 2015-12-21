@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 
 		if @event.save
-			redirect_to @event
+			redirect_to events_path
 		else
 			render :new
 		end
@@ -43,18 +43,6 @@ class EventsController < ApplicationController
 
 		@event.destroy
 		redirect_to events_path
-	end
-
-	def location
-		respond_to do |format|
-			format.json {render :json => {:message => "success"}}
-			format.js {render :nothing => true}
-		end
-		if params["locations"]
-			@locations = params["locations"].map {|hash| hash.inject({}) {|item,(k,v)| item[k.to_sym]=v;item}}
-			puts @locations
-			Event.update_location(@locations)
-		end
 	end
 
 	private

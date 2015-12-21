@@ -1,6 +1,6 @@
 <h2> 新代辦事項 </h2>
 
-	<%= form_for @event do |f| %>
+	<%= form_for @event, url: {action: :create, params: {id: @event.id}} do |f| %>
 		<div class="group">
 			<%= f.label("標題") %>
 			<%= f.text_field :title %>

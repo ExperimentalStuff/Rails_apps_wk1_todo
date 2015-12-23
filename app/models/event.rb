@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
 	def set_default_order
 		if !self.event_order
-			self.event_order = self.id
+			self.event_order = 0
 			save
 		end
 	end

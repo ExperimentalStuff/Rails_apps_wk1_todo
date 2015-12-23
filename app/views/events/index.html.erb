@@ -11,6 +11,7 @@
 			<th>id</th>
 			<th>title</th>
 			<th>content</th>
+			<th>options</th>
 		</tr>
 	</thead>
 	<tbody id="sortable">
@@ -20,6 +21,7 @@
 				<td><%= event.id %></td>
 				<td><%= link_to event.title, event %></td>
 				<td><%= truncate(event.content) %></td>
+				<td><%= link_to "刪除",event, method: :delete, class: "btn btn-xs btn-danger" %></td>
 			</tr>
 		<% end %>
 	</tbody>

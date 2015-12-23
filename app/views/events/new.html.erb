@@ -1,15 +1,15 @@
 <h2> 新代辦事項 </h2>
 
-	<%= form_for @event, url: {action: :create, params: {id: @event.id}} do |f| %>
+<div class="col-md-8 col-md-offset-2">
+	<%= simple_form_for @event do |f| %>
 		<div class="group">
-			<%= f.label("標題") %>
-			<%= f.text_field :title %>
+			<%= f.input :title %>
 		</div>
 
 		<div class="group">
-			<%= f.label("內容") %>
-			<%= f.text_area :content %>
+			<%= f.input :content %>
 		</div>
 
 		<%= f.submit "submit", data: {disable_with: "submitting..."} %>
 	<% end %>
+</div>
